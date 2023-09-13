@@ -15,7 +15,12 @@
   <body>
     <div class="webgl-content">
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
+      <script>
+        document.getElementById('unityContainer').style.width = window.innerWidth - 100 + 'px'
+        document.getElementById('unityContainer').style.height = window.innerHeight - 30 + 'px'
+
+      </script>
+      <div style="display: none;" class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">Ice Age Baby Adventure</div>
