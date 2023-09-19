@@ -12,16 +12,6 @@
     <script src="Build/UnityLoader.js"></script>
 
 	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111584806-42"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-111584806-42');
-	</script>
-	
 
 	<script type="text/javascript" async>
     !function(e,t){a=e.createElement("script"),m=e.getElementsByTagName("script")[0],a.async=1,a.src=t,m.parentNode.insertBefore(a,m)}(document,"https://universal.wgplayer.com/tag/?lh="+window.location.hostname+"&wp="+window.location.pathname+"&ws="+window.location.search);
@@ -75,14 +65,14 @@
 			{
 				if (window[preroll.config.loaderObjectName] != undefined)
 				{
-					gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen');
+					//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen');
 				
 					try {
 						window[preroll.config.loaderObjectName].refetchAd(ExternEvalResumeGame);
 					}
 					catch(err) {
 						console.log(err.message);
-						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+						//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
 					}
 				}
 			}
@@ -94,7 +84,7 @@
 	{
 		console.log("ExternEvalResumeGame");
 	
-		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+		//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
 	}
 	
 	function PreloadRewarded() 
@@ -160,14 +150,14 @@
 	{
 		console.log("RewardedSuccess");
 	
-		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+		//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
 	}
 	
 	function RewardedFail()
 	{
 		console.log("RewardedFail");
 	
-		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+		//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
 	}
 	
 	InitApi(0);
