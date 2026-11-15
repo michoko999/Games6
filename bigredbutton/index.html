@@ -6,12 +6,16 @@
     <link rel="shortcut icon" type="image/x-icon" href="bigredbutton.png" />
   </head>
   <body>
-    <script src="/js/main.js"></script>
     <div id="ruffle" width="100%" height="100%"></div>
     <script src="ruffle.js"></script>
     <script>
       window.RufflePlayer = window.RufflePlayer || {};
-      window.addEventListener("load", (event) => {
+      // Ruffle peut être prêt un peu après « load » (il est aussi injecté par la page lecteur) : on attend qu'il le soit
+      function demarrer(essais) {
+        if (typeof window.RufflePlayer.newest !== "function") {
+          if (essais > 0) setTimeout(() => demarrer(essais - 1), 100);
+          return;
+        }
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("ruffle");
@@ -20,7 +24,8 @@
         player.style.height = "100%";
         container.appendChild(player);
         player.load("big_red_button.swf");
-      });
+      }
+      window.addEventListener("load", () => demarrer(100));
     </script>
   </body>
 </html>
