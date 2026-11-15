@@ -5,7 +5,6 @@
     <title>Stickman Epic Battle</title>
     <link rel="shortcut icon" href="style/favicon.ico">
     <link rel="stylesheet" href="style/style.css">
-	<script src="/adinLoader.js"></script>
 	<script src="UnityLoader.js"></script>
     <script src="UnityProgress.js"></script>
     <script>
@@ -22,21 +21,8 @@
 	        </div>
     </div>
     <script>
-      setInterval(() => {
-        
-        document.getElementById('adsCode').remove()
-      }, 500);
       document.getElementById('gameContainer').style.height = window.height - 50 + 'px'
 
     </script>
-	<script>
-       if (typeof getAdinDomain !== 'undefined') {
-           const bodyTag = document.getElementsByTagName('body')[0];
-
-           let addAdinPreroll = document.createElement('script');
-            addAdinPreroll.src = getAdinDomain;
-            bodyTag.appendChild(addAdinPreroll);
-        }
-  </script>
   </body>
 </html>
